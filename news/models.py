@@ -10,6 +10,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="news_posts")
     updated_date = models.DateTimeField(auto_now=True)
     sub_headline = models.TextField()
+    content = models.TextField(null=True)
     news_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
     created_date = models.DateTimeField(auto_now_add=True)
