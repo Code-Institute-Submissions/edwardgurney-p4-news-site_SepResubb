@@ -17,6 +17,9 @@ class Post(models.Model):
     upvotes = models.ManyToManyField(User, related_name='upvoted', blank=True)
     downvotes = models.ManyToManyField(User, related_name='downvoted', blank=True)
 
+    # def __str__(self):
+    #     return self.title + ' | ' + str(self.author)
+
     class Meta:
         ordering = ['-created_date']
 
