@@ -1,0 +1,12 @@
+
+
+<h1>{{ post.title }}</h1>
+<h3> By: {{ post.author }}</h3>
+<h4> Last Updated: {{ post.updated_date }}</h4>
+<h4> Sub Head: {{ post.sub_headline }}</h4><br/>
+<hr>
+
+{{ post.content }}
+
+<br/><br/>
+<a href="{% url 'home' %}">Back</a>
