@@ -10,8 +10,27 @@
 <hr>
 
 {{ post.content }}
+<div class="col-md-8">
+    <form method="post" action="{% url 'submit-comment' post.slug %}">{% csrf_token %}  
+    <div class="form-group"></div>
+    <textarea class="form-control" name = 'body' id="id_body"></textarea>
+</div>
 
+    <button type="submit" class="btn btn-success">Submit Comment</button>
+</form>
 <br/><br/>
 <a href="{% url 'home' %}">Back</a>
+</div>
+<p>{{post.comments_set}}</p>
+<p>{{ post.comments_set.all}}</p>
+<ol>
+    {% for comment in post.comments.all %}
+    <li> {{ comment.body }}</li>
+    <li> {{ comment.created_on}}</li>
+    <li> {{ comment.user_name }}</li>
+    {% endfor %}
+
+</ol>
+
 
     {% endblock %}
