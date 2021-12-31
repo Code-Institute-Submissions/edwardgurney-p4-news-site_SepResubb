@@ -24,6 +24,7 @@
 
 <p>{{ post.downvotes.count }}</p>
 <br>
+
 <div class="col-md-8">
     <form method="post" action="{% url 'submit-comment' post.slug %}">{% csrf_token %}  
     <div class="form-group"></div>
@@ -34,16 +35,15 @@
 </form>
 <br/><br/>
 <a href="{% url 'home' %}">Back</a>
+
+
+<h2>Comments...</h2>
+    <dl>
+        {% for comment in post.comments.all %}
+        <dl><strong>{{ comment.user_name }}</strong> | <small>{{ comment.created_on}}</small></dl> 
+        <dd>{{ comment.body }}</dd>
+    </dl>
+        
+        {% endfor %}
 </div>
-
-<ol>
-    {% for comment in post.comments.all %}
-    <li> {{ comment.created_on}} | {{ comment.user_name }} </li>
-    <li> {{ comment.body }} </li>
-    
-    {% endfor %}
-
-</ol>
-
-
     {% endblock %}
