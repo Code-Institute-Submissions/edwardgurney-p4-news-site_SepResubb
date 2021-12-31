@@ -42,3 +42,9 @@ def search(request):
     search_word = request.GET.get('search_word')
     post_items = Post.objects.filter(title__icontains=search_word)#| Post.objects.filter(sub_headline__icontains=search_word)
     return render(request, 'search_results.html', {'search_list':post_items})
+
+@login_required
+def downvote(request, slug):
+    comment_post = get_object_or_404(Post, slug=slug)
+    comment_post.downvotes.add(request.user)
+    return HttpResponseRedirect(reverse('article-detail', args=(comment_post.slug,)))

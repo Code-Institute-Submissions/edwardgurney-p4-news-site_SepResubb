@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import HomeView, ArticleDetailView, submit_comment, upvote, search
+from .views import HomeView, ArticleDetailView, submit_comment, upvote, search, downvote
 
 
 urlpatterns = [
@@ -7,5 +7,6 @@ urlpatterns = [
     path('article/<slug>', ArticleDetailView.as_view(), name='article-detail'),
     path('comment/<slug>', submit_comment, name='submit-comment'),
     path('upvote/<slug>', upvote, name='upvote'),
-    path('search', search, name='search_posts')
+    path('search', search, name='search_posts'),
+    path('downvote/<slug>', downvote, name='downvote'),
     ]

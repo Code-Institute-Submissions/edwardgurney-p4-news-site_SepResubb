@@ -14,7 +14,7 @@
 {% for post in object_list %}
     <li><a href="{% url 'article-detail' post.slug %}"> {{ post.title }}</a> - {{ post.author }}
     <br/>
-    {{ post.content }}</li>
+    {{ post.content|safe }}</li>
 
 {% endfor %}
 </ul>
