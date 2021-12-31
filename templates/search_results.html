@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+
+<h1>Search Results</h1>
+
+<ul>
+{% for post in search_list %}
+    <li><a href="{% url 'article-detail' post.slug %}"> {{ post.title }}</a> - {{ post.author }}
+    <br/>
+    {{ post.content }}</li>
+
+{% endfor %}
+</ul>
+
+
+{% endblock %}

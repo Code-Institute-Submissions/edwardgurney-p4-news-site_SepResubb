@@ -9,25 +9,31 @@
 <h4> Sub Head: {{ post.sub_headline }}</h4><br/>
 <hr>
 
-{{ post.content }}
+{{ post.content|safe }}
+<br>
+<form method="post" action="{% url 'upvote' post.slug %}">
+    {% csrf_token %}
+    <button class="btn btn-primary btn-sm" type="submit", name="upvote", value="{{ upvote.slug }}" >Upvote</button>
+</form>
+<p>{{ post.upvotes.count }}</p>
+<br>
 <div class="col-md-8">
     <form method="post" action="{% url 'submit-comment' post.slug %}">{% csrf_token %}  
     <div class="form-group"></div>
     <textarea class="form-control" name = 'body' id="id_body"></textarea>
 </div>
 
-    <button type="submit" class="btn btn-success">Submit Comment</button>
+    <button type="submit" class="btn btn-success">Add Comment</button>
 </form>
 <br/><br/>
 <a href="{% url 'home' %}">Back</a>
 </div>
-<p>{{post.comments_set}}</p>
-<p>{{ post.comments_set.all}}</p>
+
 <ol>
     {% for comment in post.comments.all %}
-    <li> {{ comment.body }}</li>
-    <li> {{ comment.created_on}}</li>
-    <li> {{ comment.user_name }}</li>
+    <li> {{ comment.created_on}} | {{ comment.user_name }} </li>
+    <li> {{ comment.body }} </li>
+    
     {% endfor %}
 
 </ol>

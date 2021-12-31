@@ -31,3 +31,14 @@ def submit_comment(request, slug):
         user_username = user.username
         new_comment = Comment.objects.create(post =comment_post, email = user_email, user_name = user_username, body = user_comment)
         return HttpResponseRedirect(reverse('article-detail', args=(comment_post.slug,)))
+
+@login_required
+def upvote(request, slug):
+    comment_post = get_object_or_404(Post, slug=slug)
+    comment_post.upvotes.add(request.user)
+    return HttpResponseRedirect(reverse('article-detail', args=(comment_post.slug,)))
+
+def search(request):
+    search_word = request.GET.get('search_word')
+    post_items = Post.objects.filter(title__icontains=search_word)#| Post.objects.filter(sub_headline__icontains=search_word)
+    return render(request, 'search_results.html', {'search_list':post_items})
