@@ -13,13 +13,15 @@
 <br>
 <form method="post" action="{% url 'upvote' post.slug %}">
     {% csrf_token %}
+    <i class="far fa-thumbs-up fa-2x"></i>
     <button class="btn btn-primary btn-sm" type="submit", name="upvote", value="{{ upvote.slug }}" >Upvote</button>
 </form>
 <p>{{ post.upvotes.count }}</p>
 <br>
 <form method="post" action="{% url 'downvote' post.slug %}">
     {% csrf_token %}
-    <button class="btn btn-primary btn-sm" type="submit", name="downvote", value="{{ downvote.slug }}" >Downvote</button>
+    <i class="far fa-thumbs-down fa-2x"></i>
+    <button class="btn btn-primary btn-sm" type="submit", name="downvote", value="{{ downvote.slug }}">Downvote</button>
 </form>
 
 <p>{{ post.downvotes.count }}</p>
@@ -42,6 +44,7 @@
         {% for comment in post.comments.all %}
         <dl><strong>{{ comment.user_name }}</strong> | <small>{{ comment.created_on}}</small></dl> 
         <dd>{{ comment.body }}</dd>
+        <hr>
     </dl>
         
         {% endfor %}
