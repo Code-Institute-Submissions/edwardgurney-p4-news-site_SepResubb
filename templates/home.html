@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+  {% load static %}
     {% block content %}
 <br>
 <h1 class="main-heading">Todays Headlines</h1>
@@ -22,7 +22,7 @@
         <a href="{% url 'article-detail' home_news_two.slug %}" class="stretched-link">Continue reading</a>
       </div>
       <div class="col-auto d-none d-lg-block">
-        <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+        <img src="{% static 'images/solar.jpg' %}" width="200" height="250"/>
       </div>
     </div>
   </div>
@@ -42,7 +42,8 @@
     </div>
   </div>
 </div>
-<div>
+<div class="row">
+  <div class="col-md-9">
   <h2 class="sub-heading">All News Stories</h2>
   <ul>
   {% for post in object_list %}
@@ -74,8 +75,8 @@
       {% endif %}
     </ul>
     </nav>
-<div>    
-  <aside class="col-md-4 blog-sidebar">
+  </div>    
+  <aside class="col-md-3 blog-sidebar">
   
   <div class="p-4">
     <h4 class="font-italic">Top 5 - Most Liked Stories</h4>
@@ -86,6 +87,7 @@
 
     </ol>
   </div>
+  </aside>
 </div>
 
 {% endif %}
