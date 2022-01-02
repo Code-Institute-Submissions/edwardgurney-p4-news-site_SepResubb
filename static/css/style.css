@@ -1,3 +1,21 @@
 .main-heading {
     color: green;
 }
+
+.sub-heading {
+    color: green;
+}
+
+.navbar-light .navbar-brand {
+    color: green;
+}
+
+.pagination_button {
+    background-color: green;
+    border-color: green;
+
+}
+
+/* .navbar {
+    color: green;
+} */

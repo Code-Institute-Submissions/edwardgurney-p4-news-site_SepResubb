@@ -57,3 +57,9 @@ def downvote(request, slug):
     comment_post = get_object_or_404(Post, slug=slug)
     comment_post.downvotes.add(request.user)
     return HttpResponseRedirect(reverse('article-detail', args=(comment_post.slug,)))
+
+@login_required
+def inappropriate_comment(request, pk):
+    flagged_comment = get_object_or_404(Comment, pk=pk)
+    flagged_comment.inappropriate_post.add(request.user)
+    return HttpResponseRedirect(reverse('article-detail', args=(flagged_comment.post.slug,)))

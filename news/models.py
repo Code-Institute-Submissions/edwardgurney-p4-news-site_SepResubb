@@ -55,5 +55,5 @@ class Comment(models.Model):
     def number_of_downvotes(self):
         return self.downvotes.count()
 
-    def inappropriate_posts(self):
+    def inappropriate_posts_count(self):
         return self.inappropriate_post.count()

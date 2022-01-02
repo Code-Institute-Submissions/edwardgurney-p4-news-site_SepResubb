@@ -2,12 +2,13 @@
   {% load static %}
     {% block content %}
 <br>
-<h1 class="main-heading">Todays Headlines</h1>
+<h1 class="main-heading">Latest Headlines</h1>
     <div class="jumbotron p-4 p-md-5 text-white rounded btn-success">
         <div class="col-md-6 px-0">
           <h1 class="display-4 font-italic">{{ home_news_one.title }}</h1>
+          <div class="lead my-3">{{ home_news_one.created_date}}</div>
           <p class="lead my-3">{{ home_news_one.sub_headline }}</p>
-          <p class="lead mb-0"><a href="{% url 'article-detail' home_news_one.slug %}" class="text-white font-weight-bold">Continue reading...</a></p>
+          <p class="lead mb-0"><a href="{% url 'article-detail' home_news_one.slug %}" class="text-white font-weight-bold" style="text-decoration: none">Continue reading...</a></p>
         </div>
       </div>
 <br>
@@ -15,11 +16,10 @@
   <div class="col-md-6">
     <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
       <div class="col p-4 d-flex flex-column position-static">
-        <strong class="d-inline-block mb-2 text-primary">World</strong>
-        <h3 class="mb-0">{{ home_news_two.title }}</h3>
+        <h3 class="mb-0 sub-heading">{{ home_news_two.title }}</h3>
         <div class="mb-1 text-muted">{{ home_news_two.created_date}}</div>
         <p class="card-text mb-auto">{{ home_news_two.sub_headline }}</p>
-        <a href="{% url 'article-detail' home_news_two.slug %}" class="stretched-link">Continue reading</a>
+        <a href="{% url 'article-detail' home_news_two.slug %}" class="stretched-link sub-heading" style="text-decoration: none">Continue reading</a>
       </div>
       <div class="col-auto d-none d-lg-block">
         <img src="{% static 'images/solar.jpg' %}" width="200" height="250"/>
@@ -30,11 +30,10 @@
   <div class="col-md-6">
     <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
       <div class="col p-4 d-flex flex-column position-static">
-        <strong class="d-inline-block mb-2 text-success">Design</strong>
-        <h3 class="mb-0">{{ home_news_three.title }}</h3>
+        <h3 class="mb-0 sub-heading">{{ home_news_three.title }}</h3>
         <div class="mb-1 text-muted">{{ home_news_three.created_date}}</div>
         <p class="mb-auto">{{ home_news_three.sub_headline }}</p>
-        <a href="{% url 'article-detail' home_news_three.slug %}" class="stretched-link">Continue reading</a>
+        <a href="{% url 'article-detail' home_news_three.slug %}" class="stretched-link sub-heading" style="text-decoration: none">Continue reading</a>
       </div>
       <div class="col-auto d-none d-lg-block">
         <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
@@ -47,7 +46,7 @@
   <h2 class="sub-heading">All News Stories</h2>
   <ul>
   {% for post in object_list %}
-      <li><a href="{% url 'article-detail' post.slug %}"> {{ post.title }}</a> - {{ post.author }}
+      <li><a href="{% url 'article-detail' post.slug %}" style="text-decoration: none" class="sub-heading"> {{ post.title }}</a> - {{ post.author }}
       <br/>
       {{ post.content|safe }}</li>
 
@@ -57,19 +56,19 @@
   <nav aria-label="...">
     <ul class="pagination">
       {% if page_obj.has_previous %}
-        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+        <li class="page-item"><a class="page-link sub-heading" href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
       {% else %}
-        <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true"><span>&laquo;</span></a></li>
+        <li class="page-item disabled sub-heading"><a class="page-link sub-heading" href="#" tabindex="-1" aria-disabled="true"><span>&laquo;</span></a></li>
       {% endif %}
       {% for i in paginator.page_range %}
         {% if page_obj.number == i %}
-          <li class="page-item btn btn-primary" aria-current="page"><span>{{ i }}<span class="sr-only"></span></span></li>
+          <li class="page-item btn btn-primary pagination_button" aria-current="page"><span>{{ i }}<span class="sr-only"></span></span></li>
         {% else %}
-          <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+          <li class="page-item sub-heading"><a class="page-link sub-heading" href="?page={{ i }}">{{ i }}</a></li>
         {% endif %}
       {% endfor %}
       {% if page_obj.has_next %}
-        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+        <li class="page-item"><a class="page-link sub-heading" href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
       {% else %}
         <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true"><span>&raquo;</span></a></li>
       {% endif %}
@@ -79,10 +78,10 @@
   <aside class="col-md-3 blog-sidebar">
   
   <div class="p-4">
-    <h4 class="font-italic">Top 5 - Most Liked Stories</h4>
+    <h4 class="font-italic sub-heading">Top 5 - Most Liked Stories</h4>
     <ol class="list-unstyled mb-0">
       {% for j in top_five %}
-      <li><a href="{% url 'article-detail' j.slug %}">{{ j.title }}</a> {{j.upvotes.count }}</li>
+      <li><a href="{% url 'article-detail' j.slug %}" style="text-decoration: none" class="sub-heading">{{ j.title }}</a></li>
       {% endfor %}
 
     </ol>
@@ -91,7 +90,5 @@
 </div>
 
 {% endif %}
-
-
 
 {% endblock %}

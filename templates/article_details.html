@@ -6,7 +6,7 @@
 <h1>{{ post.title }}</h1>
 <h3> By: {{ post.author }}</h3>
 <h4> Last Updated: {{ post.updated_date }}</h4>
-<h4> Sub Head: {{ post.sub_headline }}</h4><br/>
+<h4> {{ post.sub_headline }}</h4><br/>
 <hr>
 
 {{ post.content|safe }}
@@ -20,8 +20,8 @@
 <br>
 <form method="post" action="{% url 'downvote' post.slug %}">
     {% csrf_token %}
-    <i class="far fa-thumbs-down fa-2x"></i>
-    <button class="btn btn-primary btn-sm" type="submit", name="downvote", value="{{ downvote.slug }}">Downvote</button>
+    <!-- <i class="far fa-thumbs-down fa-2x"></i> -->
+    <button class="btn btn-primary btn-sm far fa-thumbs-down btn btn-success" type="submit", name="downvote", value="{{ downvote.slug }}">Downvote</button>
 </form>
 
 <p><em><small>{{ post.downvotes.count }}</small></em></p>
@@ -36,14 +36,19 @@
     <button type="submit" class="btn btn-success">Add Comment</button>
 </form>
 <br/><br/>
-<a href="{% url 'home' %}">Back</a>
+<a href="{% url 'home' %}" class="btn btn-primary btn-sm btn btn-success" style="text-decoration: none">Back</a>
 
 
 <h2>Comments...</h2>
     <dl>
         {% for comment in post.comments.all %}
         <dl><strong>{{ comment.user_name }}</strong> | <small>{{ comment.created_on}}</small></dl> 
-        <dd>{{ comment.body }}</dd>
+        <dd >{{ comment.body }}</dd>
+        <form action="{% url 'inappropriate_comment' comment.pk %}" method="POST">
+            {% csrf_token %}
+            <!-- <i class="far fa-frown"></i> -->
+            <button class="btn btn-primary btn-sm far fa-frown btn btn-warning" type="submit" name="innappropriate_id"></button>
+        </form>
         <hr>
     </dl>
         

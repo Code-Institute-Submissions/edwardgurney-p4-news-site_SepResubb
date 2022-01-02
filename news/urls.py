@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import HomeView, ArticleDetailView, submit_comment, upvote, search, downvote
+from .views import HomeView, ArticleDetailView, submit_comment, upvote, search, downvote, inappropriate_comment
 
 
 urlpatterns = [
@@ -9,4 +9,5 @@ urlpatterns = [
     path('upvote/<slug>', upvote, name='upvote'),
     path('search', search, name='search_posts'),
     path('downvote/<slug>', downvote, name='downvote'),
+    path('inappropriate/<pk>', inappropriate_comment, name='inappropriate_comment'),
     ]
