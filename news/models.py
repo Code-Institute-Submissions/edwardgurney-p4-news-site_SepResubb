@@ -41,9 +41,10 @@ class Comment(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     comment_upvote = models.ManyToManyField(User, related_name='comment_upvoted', blank=True)
     comment_downvote = models.ManyToManyField(User, related_name='comment_downvoted', blank=True)
+    inappropriate_post = models.ManyToManyField(User, related_name='inappropriate_posts', blank=True)
 
     class Meta:
-        ordering = ['-created_on']
+        ordering = ['created_on']
 
     def __str__(self):
         return f"Comment {self.body} by {self.user_name}"
