@@ -82,7 +82,7 @@
     <h4 class="font-italic">Top 5 - Most Liked Stories</h4>
     <ol class="list-unstyled mb-0">
       {% for j in top_five %}
-      <li><a href="#">{{ j.title }}</a> {{j.upvotes.count }}</li>
+      <li><a href="{% url 'article-detail' j.slug %}">{{ j.title }}</a> {{j.upvotes.count }}</li>
       {% endfor %}
 
     </ol>
