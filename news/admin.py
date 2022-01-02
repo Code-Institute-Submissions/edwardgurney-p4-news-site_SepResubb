@@ -16,7 +16,7 @@ class PostAdmin(SummernoteModelAdmin):
 class CommentAdmin(admin.ModelAdmin):
 
     list_filter = ('comment_upvote', 'comment_downvote', 'created_on')
-    list_display = ('user_name', 'body', 'created_on')
+    list_display = ('user_name', 'body', 'created_on', 'inappropriate_posts')
     search_fields = ('user_name', 'created_on', 'email')
 
 

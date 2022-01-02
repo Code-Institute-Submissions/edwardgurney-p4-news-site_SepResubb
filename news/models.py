@@ -20,8 +20,8 @@ class Post(models.Model):
     # def __str__(self):
     #     return self.title + ' | ' + str(self.author)
 
-    class Meta:
-        ordering = ['-created_date']
+    # class Meta:
+    #     ordering = ['-created_date']
 
     def __str__(self):
         return self.title
@@ -54,3 +54,6 @@ class Comment(models.Model):
 
     def number_of_downvotes(self):
         return self.downvotes.count()
+
+    def inappropriate_posts(self):
+        return self.inappropriate_post.count()

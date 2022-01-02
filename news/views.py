@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
-
+from django.db.models import Count
 
 
 # Create your views here.
@@ -14,6 +14,15 @@ class HomeView(ListView):
     model = Post
     template_name = 'home.html'
     paginate_by = 6
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['home_news_one'] = Post.objects.all().order_by('-created_date')[0]
+        context['home_news_two'] = Post.objects.all().order_by('-created_date')[1]
+        context['home_news_three'] = Post.objects.all().order_by('-created_date')[2]
+        context['top_five'] = Post.objects.annotate(upvotes_count=Count('upvotes')).order_by('-upvotes_count')[:5]#Post.objects.all().order_by('upvotes')[:5]
+        return context
+
 
 class ArticleDetailView(DetailView):
     model = Post
