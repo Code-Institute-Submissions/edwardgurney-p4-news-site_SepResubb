@@ -46,9 +46,14 @@
   <h2 class="sub-heading">All News Stories</h2>
   <ul>
   {% for post in object_list %}
-      <li><a href="{% url 'article-detail' post.slug %}" style="text-decoration: none" class="sub-heading"> {{ post.title }}</a> - {{ post.author }}
-      <br/>
-      {{ post.content|safe }}</li>
+      <li>
+        <p>
+          <a href="{% url 'article-detail' post.slug %}" style="text-decoration: none" class="sub-heading"> {{ post.title }}</a> - {{ post.author }}
+        </p>
+        <p>
+          {{ post.sub_headline }}
+        </p>
+      </li>
 
   {% endfor %}
   </ul>

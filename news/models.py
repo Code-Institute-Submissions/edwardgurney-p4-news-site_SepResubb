@@ -4,6 +4,7 @@ from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
+
 class Post(models.Model):
     title = models.CharField(max_length=250, unique=True)
     slug = models.SlugField(max_length=250, unique=True)
@@ -20,8 +21,8 @@ class Post(models.Model):
     # def __str__(self):
     #     return self.title + ' | ' + str(self.author)
 
-    # class Meta:
-    #     ordering = ['-created_date']
+    class Meta:
+        ordering = ['-created_date']
 
     def __str__(self):
         return self.title

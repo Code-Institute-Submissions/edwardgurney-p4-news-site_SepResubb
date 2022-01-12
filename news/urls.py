@@ -9,5 +9,6 @@ urlpatterns = [
     path('upvote/<slug>', upvote, name='upvote'),
     path('search', search, name='search_posts'),
     path('downvote/<slug>', downvote, name='downvote'),
-    path('inappropriate/<pk>', inappropriate_comment, name='inappropriate_comment'),
+    path('inappropriate/<pk>', inappropriate_comment,
+         name='inappropriate_comment'),
     ]

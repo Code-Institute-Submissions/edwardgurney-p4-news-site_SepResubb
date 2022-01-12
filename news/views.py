@@ -20,7 +20,7 @@ class HomeView(ListView):
         context['home_news_one'] = Post.objects.all().order_by('-created_date')[0]
         context['home_news_two'] = Post.objects.all().order_by('-created_date')[1]
         context['home_news_three'] = Post.objects.all().order_by('-created_date')[2]
-        context['top_five'] = Post.objects.annotate(upvotes_count=Count('upvotes')).order_by('-upvotes_count')[:5]#Post.objects.all().order_by('upvotes')[:5]
+        context['top_five'] = Post.objects.annotate(upvotes_count=Count('upvotes')).order_by('-upvotes_count')[:5]  #Post.objects.all().order_by('upvotes')[:5]
         return context
 
 
@@ -29,17 +29,19 @@ class ArticleDetailView(DetailView):
     form = CommentForm
     template_name = 'article_details.html'
 
+
 @login_required
 def submit_comment(request, slug):
     if request.method == "POST":
         #form = CommentForm(request.POST)
         user_comment = request.POST.get('body')
         comment_post = get_object_or_404(Post, slug=slug)
-        user =  request.user
+        user = request.user
         user_email = user.email
         user_username = user.username
-        new_comment = Comment.objects.create(post =comment_post, email = user_email, user_name = user_username, body = user_comment)
+        new_comment = Comment.objects.create(post=comment_post, email=user_email, user_name=user_username, body=user_comment)
         return HttpResponseRedirect(reverse('article-detail', args=(comment_post.slug,)))
+
 
 @login_required
 def upvote(request, slug):
@@ -47,16 +49,19 @@ def upvote(request, slug):
     comment_post.upvotes.add(request.user)
     return HttpResponseRedirect(reverse('article-detail', args=(comment_post.slug,)))
 
+
 def search(request):
     search_word = request.GET.get('search_word')
-    post_items = Post.objects.filter(title__icontains=search_word)#| Post.objects.filter(sub_headline__icontains=search_word)
-    return render(request, 'search_results.html', {'search_list':post_items})
+    post_items = Post.objects.filter(title__icontains=search_word)  #| Post.objects.filter(sub_headline__icontains=search_word)
+    return render(request, 'search_results.html', {'search_list': post_items})
+
 
 @login_required
 def downvote(request, slug):
     comment_post = get_object_or_404(Post, slug=slug)
     comment_post.downvotes.add(request.user)
     return HttpResponseRedirect(reverse('article-detail', args=(comment_post.slug,)))
+
 
 @login_required
 def inappropriate_comment(request, pk):

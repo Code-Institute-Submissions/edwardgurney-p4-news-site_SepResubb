@@ -394,15 +394,15 @@ This was solved by adding |safe when there was HTML where it appears. e.g. {{ po
 
 I found this resolution in the django documents: https://docs.djangoproject.com/en/4.0/ref/templates/builtins/#std:templatefilter-safe
 
-- The search bar wasn’t working properly because it didn’t recognise case sensitive user input. This meant that users adding something with capitals at the start it would not search properly. Adding an I before contains (icontains) stopped this problem from occurring becasue it is case insensitive.<br> 
+- The search bar wasn’t working properly because it didn’t recognise case sensitive user input. This meant that users adding something with capitals at the start it would not search properly. Adding an I before contains (icontains) stopped this problem from occurring because it is case insensitive.<br> 
 This was found in the search function django documentation:
 https://docs.djangoproject.com/en/4.0/topics/db/search/
 
 - Pagination was not working properly, Pagination was set to 6 in my HomeView class, but articles were disappearing off the page once they were past 6 and were not locatable. I googled how to paginate with google and found the following article: 
 https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html
-<br>I used some of the code here as a basis to fix the problem (which you can see is in my code), but had to make changes to suit the site. I also added in some bootstrap code to make it more aesthetically pleasing. 
+<br>I used some of the code here as a basis to fix the problem (which you can see is in my code), but had to make changes to suit the site, for example adding in classes and. I also added in some bootstrap code to make it more aesthetically pleasing. 
 
-- Most liked chart wasn’t working. My model as a many to many wasn’t and integer so it was posting articles that had been liked but not in any coherent order. Django documentation used was: <br>
+- The most liked chart wasn’t working. The reason for this I discovered is becasue my model as a many to many wasn’t an integer so it was posting articles that had been liked but not in any coherent order. Django documentation used was: <br>
 https://docs.djangoproject.com/en/4.0/topics/db/aggregation/<br>
 I used annotate to create an (temporary) upvotes counter and then was able to order it in descending order of the created upvotes count with order_by.
 
