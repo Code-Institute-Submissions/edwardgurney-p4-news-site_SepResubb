@@ -8,7 +8,8 @@ from cloudinary.models import CloudinaryField
 class Post(models.Model):
     title = models.CharField(max_length=250, unique=True)
     slug = models.SlugField(max_length=250, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="news_posts")
+    author = models.ForeignKey(User, on_delete=models.CASCADE,
+                               related_name="news_posts")
     updated_date = models.DateTimeField(auto_now=True)
     sub_headline = models.TextField()
     content = models.TextField(null=True)
@@ -16,7 +17,8 @@ class Post(models.Model):
     excerpt = models.TextField(blank=True)
     created_date = models.DateTimeField(auto_now_add=True)
     upvotes = models.ManyToManyField(User, related_name='upvoted', blank=True)
-    downvotes = models.ManyToManyField(User, related_name='downvoted', blank=True)
+    downvotes = models.ManyToManyField(User, related_name='downvoted',
+                                       blank=True)
 
     # def __str__(self):
     #     return self.title + ' | ' + str(self.author)
@@ -35,7 +37,8 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    post = models.ForeignKey(Post, on_delete=models.CASCADE,
+                             related_name='comments')
     user_name = models.CharField(max_length=100)
     email = models.EmailField()
     body = models.TextField()

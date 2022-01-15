@@ -131,10 +131,10 @@ The following were imported from various sources including Django views, shortcu
 </details>
 <br>
 <details>
-  <summary>ADD SCREENSHOT OF HOMEPAGE WHEN ARTICLES UPLOADED</summary>
+  <summary>This is a screenshot of the top of the homepage once completed</summary>
   
 
-<img src="/workspace/p4-news-site/static/images/development_images/homepageindev.png">
+<img src="/workspace/p4-news-site/static/images/development_images/finished_homepage.png">
 
 </details>
 <br>
@@ -189,10 +189,10 @@ The following were imported from various sources including Django views, shortcu
 #### **Search Results Page**
 
 <details>
-  <summary>When cusers search using keywords, the headlines of all articles on the site are searched and any matches returned. ADD IMAGE ONCE ARTICLES UPLOADED TO SITE</summary>
+  <summary>When users search using keywords, the headlines of all articles on the site are searched and any matches returned.</summary>
   
   
-<img src="">
+<img src="/workspace/p4-news-site/static/images/development_images/search.png">
 
 </details>
 <br>
@@ -200,10 +200,10 @@ The following were imported from various sources including Django views, shortcu
 #### **Article Details Page**
 
 <details>
-  <summary>Clicking the article headline takes the user through to the article page where they can interact with the content ADD SCREENSHOT OF EXAMPLE ARTICLE WHEN ARTICLES UPLOADED</summary>
+  <summary>Clicking the article headline takes the user through to the article page where they can interact with the content</summary>
   
   
-<img src="">
+<img src="/workspace/p4-news-site/static/images/development_images/article_detail.png">
 
 </details>
 <br>
@@ -221,9 +221,9 @@ The following were imported from various sources including Django views, shortcu
 #### **Comments section with button to flag inappropriate posts**
 
 <details>
-  <summary>Users can leave comments and engage with the community, they can also notify site admin of any imappropriate posts by clicking the face icon. ADD IMAGE ONCE ARTICLES UPLOADED AND COMMENTS</summary>
+  <summary>Users can leave comments and engage with the community, they can also notify site admin of any imappropriate posts by clicking the face icon.</summary>
   
-<img src="">
+<img src="/workspace/p4-news-site/static/images/development_images/user_comments.png">
 
 </details>
 <img src="/workspace/p4-news-site/static/images/development_images/sad_face.png">
@@ -232,9 +232,9 @@ The following were imported from various sources including Django views, shortcu
 ### **Top 5 articles section**
 
 <details>
-  <summary>This is where users can see the. most liked articles on the siteADD IMAGE ONCE ARTICLES UPLOADED AND COMMENTS</summary>
+  <summary>This is where users can see the. most liked articles on the site</summary>
   
-<img src="">
+<img src="/workspace/p4-news-site/static/images/development_images/top5.png">
 
 </details>
 <br>
@@ -285,72 +285,37 @@ The following were imported from various sources including Django views, shortcu
 ### **Features to Implement in future Versions**
 - When a user clicks the inappropriate post button for a notifcation to tell them that the site admin will review the post shortly and remove. 
 
-- .
+- If the users downvote an article, it deducts it from the upvote count for the most popular articles table on the righthandisde of the home page.
+
+- Currently, clicking 'Add Comment' when the user hasn't added a comment leaves a blank comment in the comments section. this should be changed so that a user cannot post unless they have entered text.
 
 ## **Testing**
 
 ## **Languages Used & Validation** - Python.
 ### **PEP8 Validation**
-PEP8 online validation was used to check for any errors. All of the code passes with no errors or warning present. All code was returned as 'All Right'. Example screen shots of some of the code are below:
+PEP8 online validation was used to check for any errors. All of the code passes with no errors or warning present due to bad code.  Example screen shots of some of the code are below:
 
 <details>
-  <summary>This screen shows the top of the file and the code being accepted on Pep8</summary>
+  <summary>This screen shows the top of the file and the code being accepted on Pep8 for Python code. All python code was tested using this process. The three errors that remain are due to a long variable name and breaking these down into a line underneath would not have solved the problem. Additionally, for example purposes I made the changes elsewhere in the models.py file and moved any lines that were too long to the line below. However, whilst I am aware of the 'line too long' item, it applies to a time when monitors were smaller and a max line limit of 80 was the accepted convention. Nowadays with bigger screens this is no longer the case, and longer lines are still readable. Therefore going forward, I have no issue with my lines being longer becasue I believe it makes it easier to read than breaking it down onto individual lines. Of course, if the line is excessively long then I will break it down, but only if I believe it becomes unreadable.</summary>
   
   
-<img src="views/images/top_of_file.png">
+<img src="/workspace/p4-news-site/static/images/development_images/pep82ok.png">
 
 </details>
 <br>
 
-<details>
-  <summary>This screen shows the introduction function and the code being accepted on Pep8</summary>
-  
-  
-<img src="views/images/Introduction_function.png">
-
-</details>
-<br>
-
-<details>
-  <summary>This screen shows most of the user choice function and the code being accepted on Pep8</summary>
-  
-  
-<img src="views/images/user_choice_func.png">
-
-</details>
-<br>
-
-<details>
-  <summary>This screen shows the user check matches function and the code being accepted on Pep8</summary>
-  
-  
-<img src="views/images/check_matches.png">
-
-</details>
-<br>
-
-<details>
-  <summary>This screen shows the game over and result functions and the code being accepted on Pep8</summary>
-  
-  
-<img src="views/images/game_over_result_func.png">
-
-</details>
-<br>
-
-<details>
-  <summary>This screen shows part of the name generation function and the code being accepted on Pep8</summary>
-  
-  
-<img src="views/images/name_generation.png">
-
-</details>
 
 ### **WC3 Validation**
 The WC3 validator was used to check for any errors in the HTML code. All code passes with no errors.
 
+<br>
+
 ### **CSS Validation**
-The WC3 CSS validator was used to check for any errors in the CSS code. All code passes with no errors.
+<details>
+  <summary>The WC3 CSS validator was used to check for any errors in the CSS code. All code passes with no errors.</summary>
+
+<img src="/workspace/p4-news-site/static/images/development_images/css_pass.png">
+</details>
 
 ## **Manual Testing**
 - The site has been used by friends and family to try and find any errors. There are no known errors in this version that have been found that haven't been fixed during the development process.
@@ -408,7 +373,11 @@ I used annotate to create an (temporary) upvotes counter and then was able to or
 
 <br>
 
-### Unfixed Bugs
+### Unfixed Bugs ans issues
+
+- When a user clicks 'submit comment' without entering any text, a blank comment is left in the 
+comments section. This issue (it is not a bug) is to be ammended in a future version, where the 
+user has to enter text in the comment box to be able to submit comment. 
 
 - After significant testing there does not seem to be any bugs at present. 
 
@@ -455,6 +424,8 @@ To clone this repository follow the below steps:
 
 - Bootstrap was used for the design of the site, using for example headers and buttons and implementing them to the site. A [Bootstrap](https://getbootstrap.com/docs/4.3/examples/blog/) template was used for inspiration and as a basis for the newsite. 
 
+- Images for the site were taken from a free images site [pexels](https://www.pexels.com/search/solar/) and were provided from a further site uploaded to pexels called [pixabay](https://www.pexels.com/@pixabay)
+
 - Content for the site was written by the developer as part of his role in the renewable energy industry [diagrams.net](https://www.diagrams.net/)
 
 - Some additional content was added to the site for demonstration of site functionality only and all content was taken from [site]()
@@ -462,6 +433,6 @@ To clone this repository follow the below steps:
 ## **Acknowledgements**
 
 - My mentor Chris Quin for his continued support in my projects despite being away when I had my first session on this project. Additionally his help in giving me a confidence boost without even knowing he's doing it.
-- My pregnant wife Rebecca for her continued support during many hours working through this course and looking after our daughter whilst I stress out and try and code.
+- My heavily pregnant wife Rebecca for her continued support during many hours working through this course and looking after our daughter whilst I stress out and try and code.
 
 
