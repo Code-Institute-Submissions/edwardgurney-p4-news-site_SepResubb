@@ -63,7 +63,6 @@ An Agile methodolgy was used during the development process and this has been do
 
 ### *Drawn Wireframe*
 
-<!-- <details> -->
   The initial design I used with a pen and paper when getting my initial thoughts down on paper.
 
 <img src="static/images/IMG_1268.png">  
@@ -73,10 +72,10 @@ An Agile methodolgy was used during the development process and this has been do
 
 ### *Balsamiq Wireframes*
 
-  <summary>This dropdown shows a Balsamiq wireframe of the homepage 
-  </summary>
+  This dropdown shows a Balsamiq wireframe of the homepage 
   
- <img src="/workspace/p4-news-site/static/images/development_images/wireframe1.png">
+  
+ <img src="https://github.com/edwardgurney/p4-news-site/blob/main/static/images/development_images/wireframe1.png">
 
 <br>
 
