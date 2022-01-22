@@ -118,11 +118,10 @@ The following were imported from various sources including Django views, shortcu
 - Below are descriptions of features with screenshots that demonstrate the project outcomes and website layout, click on the drop down arrow to view image examples.
 
 #### **Homepage**
-<details>
-  <summary>This is the homepage during project development before articles were uploaded. If you are not signed in you are still able to access the homepage and read articles </summary>
-  
 
-<img src="/workspace/p4-news-site/static/images/development_images/homepageindev.png">
+  This is the homepage during project development before articles were uploaded. If you are not signed in you are still able to access the homepage and read articles
+  
+<img src="static/images/development_images/homepageindev.png">
 
 </details>
 <br>

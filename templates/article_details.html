@@ -28,6 +28,7 @@
 <br>
 
 <div class="col-md-8">
+    {% if request.user.is_authenticated %}
     <form method="post" action="{% url 'submit-comment' post.slug %}">{% csrf_token %}  
     <div class="form-group"></div>
     <textarea class="form-control" name = 'body' id="id_body"></textarea>
@@ -35,6 +36,10 @@
 
     <button type="submit" class="btn btn-success">Add Comment</button>
 </form>
+    {% else %}
+    <p><a id="no_line" href="{% url 'account_login' %}">Please login to comment...</a></p>
+    {% endif %}
+
 <br/><br/>
 <a href="{% url 'home' %}" class="btn btn-primary btn-sm btn btn-success" style="text-decoration: none">Back</a>
 

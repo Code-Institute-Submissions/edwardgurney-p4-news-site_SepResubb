@@ -15,3 +15,7 @@
     border-color: green;
 
 }
+#no_line {
+    text-decoration: none;
+    color: green;
+}
