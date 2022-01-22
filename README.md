@@ -72,24 +72,21 @@ An Agile methodolgy was used during the development process and this has been do
 
 ### *Balsamiq Wireframes*
 
-  This dropdown shows a Balsamiq wireframe of the homepage 
+  A Balsamiq wireframe of the homepage 
   
-  
- <img src="https://github.com/edwardgurney/p4-news-site/blob/main/static/images/development_images/wireframe1.png">
+ <img src="static/images/development_images/wireframe1.png">
 
 <br>
 
-  <summary>This dropdown shows a Balsamiq wireframe of an article page once the article headline has been clicked on 
-  </summary>
+  A Balsamiq wireframe of an article page once the article headline has been clicked on 
   
- <img src="/workspace/p4-news-site/static/images/development_images/wireframe2.png">
+ <img src="static/images/development_images/wireframe2.png">
 
 <br>
 
-  <summary>This dropdown shows a Balsamiq wireframe of the homepage represented on a mobile phone 
-  </summary>
+  This dropdown shows a Balsamiq wireframe of the homepage represented on a mobile phone 
   
- <img src="/workspace/p4-news-site/static/images/development_images/wireframe3.png">
+ <img src="static/images/development_images/wireframe3.png">
 
 <br>
 
