@@ -1,7 +1,7 @@
 # The Daily Green News Site
 ### Developer: Edward Gurney
 
-### You can view the live project here: [Baby Name Matcher](https://baby-matching-bot.herokuapp.com/)
+### You can view the live project here: [The Daily Green](https://the-daily-green.herokuapp.com/)
 <br>
 
 ## **Table of Contents**
@@ -63,35 +63,35 @@ An Agile methodolgy was used during the development process and this has been do
 
 ### *Drawn Wireframe*
 
-<details>
-  <summary>Click the dropdown arrow to view the initial design I used with a pen and paper when getting my initial thoughts down on paper.
-  </summary>
-  
-  <img src="/workspace/p4-news-site/static/images/IMG_1268.png">
-</details>
+<!-- <details> -->
+  The initial design I used with a pen and paper when getting my initial thoughts down on paper.
+
+<img src="static/images/IMG_1268.png">  
+
+
 <br>
 
 ### *Balsamiq Wireframes*
-<details>
+
   <summary>This dropdown shows a Balsamiq wireframe of the homepage 
   </summary>
   
  <img src="/workspace/p4-news-site/static/images/development_images/wireframe1.png">
-</details>
+
 <br>
-<details>
+
   <summary>This dropdown shows a Balsamiq wireframe of an article page once the article headline has been clicked on 
   </summary>
   
  <img src="/workspace/p4-news-site/static/images/development_images/wireframe2.png">
-</details>
+
 <br>
-<details>
+
   <summary>This dropdown shows a Balsamiq wireframe of the homepage represented on a mobile phone 
   </summary>
   
  <img src="/workspace/p4-news-site/static/images/development_images/wireframe3.png">
-</details>
+
 <br>
 
 ## **Technology Used**

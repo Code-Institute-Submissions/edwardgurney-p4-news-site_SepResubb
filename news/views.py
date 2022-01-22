@@ -20,7 +20,7 @@ class HomeView(ListView):
         context['home_news_one'] = Post.objects.all().order_by('-created_date')[0]
         context['home_news_two'] = Post.objects.all().order_by('-created_date')[1]
         context['home_news_three'] = Post.objects.all().order_by('-created_date')[2]
-        context['top_five'] = Post.objects.annotate(upvotes_count=Count('upvotes')).order_by('-upvotes_count')[:5]  #Post.objects.all().order_by('upvotes')[:5]
+        context['top_five'] = Post.objects.annotate(upvotes_count=Count('upvotes')).order_by('-upvotes_count')[:5]
         return context
 
 
@@ -60,11 +60,13 @@ def search(request):
 def downvote(request, slug):
     comment_post = get_object_or_404(Post, slug=slug)
     comment_post.downvotes.add(request.user)
-    return HttpResponseRedirect(reverse('article-detail', args=(comment_post.slug,)))
+    return HttpResponseRedirect(reverse('article-detail', args=(
+        comment_post.slug,)))
 
 
 @login_required
 def inappropriate_comment(request, pk):
     flagged_comment = get_object_or_404(Comment, pk=pk)
     flagged_comment.inappropriate_post.add(request.user)
-    return HttpResponseRedirect(reverse('article-detail', args=(flagged_comment.post.slug,)))
+    return HttpResponseRedirect(reverse('article-detail', args=(
+        flagged_comment.post.slug,)))
