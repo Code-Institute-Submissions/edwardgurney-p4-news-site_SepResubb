@@ -123,15 +123,12 @@ The following were imported from various sources including Django views, shortcu
   
 <img src="static/images/development_images/homepageindev.png">
 
-</details>
 <br>
-<details>
-  <summary>This is a screenshot of the top of the homepage once completed</summary>
+
+  This is a screenshot of the top of the homepage once completed
   
+<img src="static/images/development_images/finished_homepage.png">
 
-<img src="/workspace/p4-news-site/static/images/development_images/finished_homepage.png">
-
-</details>
 <br>
 
 #### **Navigation Bar**
