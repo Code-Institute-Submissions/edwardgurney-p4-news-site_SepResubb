@@ -86,7 +86,7 @@ An Agile methodolgy was used during the development process and this has been do
 
   This dropdown shows a Balsamiq wireframe of the homepage represented on a mobile phone 
   
- <img src="static/images/development_images/wireframe3.png">
+ <img src="static/images/development_images/wireframe3.png" width="250" height="450">
 
 <br>
 
@@ -256,17 +256,26 @@ Inappropriate Post Counter in admin
 
 ## **Languages Used & Validation** - Python.
 ### **PEP8 Validation**
-PEP8 online validation was used to check for any errors. All of the code passes with no errors or warning present due to bad code.  Example screen shots of some of the code are below:
+[PEP8 online validation](http://pep8online.com) was used to check for any errors. All of the code passes with no errors or warning present due to bad code.  Example screen shots of some of the code are below:
 
-
-  This screen shows the top of the file and the code being accepted on Pep8 for Python code. All python code was tested using this process. The three errors that remain are due to a long variable name and breaking these down into a line underneath would not have solved the problem. Additionally, for example purposes I made the changes elsewhere in the models.py file and moved any lines that were too long to the line below. However, whilst I am aware of the 'line too long' item, it applies to a time when monitors were smaller and a max line limit of 80 was the accepted convention. Nowadays with bigger screens this is no longer the case, and longer lines are still readable. Therefore going forward, I have no issue with my lines being longer becasue I believe it makes it easier to read than breaking it down onto individual lines. Of course, if the line is excessively long then I will break it down, but only if I believe it becomes unreadable.
+  This screen shows the top of the file and the code being accepted on Pep8 for Python code. All python code was tested using this process. There are some errorts that remain and these have been left intentionally. Some errors that have the 'line too long' warning were actioned, but for some it is due to a long variable name. However, whilst I am aware of the 'line too long' item, it applies to a time when monitors were smaller and a max line limit of 80 was the accepted convention. Nowadays with bigger screens this is no longer the case, and longer lines are still readable. Therefore going forward, I have no issue with my lines being longer becasue I believe it makes it easier to read than breaking it down onto individual lines. Of course, if the line is excessively long then I will break it down, but only if I believe it becomes unreadable.
   
-<img src="static/images/development_images/pep82ok.png">
+<img src="static/images/development_images/pep8allright.png">
 
+  There were some errors in the PROBLEMS window in models.py (see below) no fix could be found for these becasue it would have required in significant recode, the code was run through PEP8 and it showed no errors for this section. 
+
+<img src="static/images/development_images/models.pyerror.png">
+<img src="static/images/development_images/pep8overide.png">
+
+ Problems left in the views.py were because of a lintel error and thus is not an actual error. The Class 'Comment' and 'Post' has no 'objects' member is a known issue in gitpod and therefore not an actual error. I spoke with student support on this on 23.1.22.
 <br>
 
 ### **WC3 Validation**
-The WC3 validator was used to check for any errors in the HTML code. All code passes with no errors.
+The [WC3 validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-daily-green.herokuapp.com%2F#textarea) was used to check for any errors in the HTML code. All code passes with all major errors removed. The warning was left in place as there was no need to remove it.
+
+There is one remaining error for the HTML code on the article_details page (that the font is obsolete and to use CSS nstead). This is a part of Summernotes Rich Text Editor and not a part of any of the code done by me personally in development.
+
+<img src="static/images/development_images/obsoleteerror.png">
 
 <br>
 
@@ -332,7 +341,7 @@ I used annotate to create an (temporary) upvotes counter and then was able to or
 
 <br>
 
-### Unfixed Bugs ans issues
+### Unfixed Bugs and issues
 
 - When a user clicks 'submit comment' without entering any text, a blank comment is left in the 
 comments section. This issue (it is not a bug) is to be ammended in a future version, where the 
@@ -342,7 +351,7 @@ user has to enter text in the comment box to be able to submit comment.
 
 ## **Deployment**
 
-The app was deployed on Heroku in the following steps:
+The app was deployed on Heroku in the following steps (remote deployment):
 
 1. Created a Heroku account (or log in if existing user).
 2. In the upper right hand corner clicked "New" and then selected "Create New App".
@@ -354,6 +363,12 @@ The app was deployed on Heroku in the following steps:
 6. Search for repository 
 7. Enable automatic deploys and then deploy branch
 8. Once processing has finished click on "View"
+
+#### Local Deployment
+
+  1. Login to Github
+  2. Go to the repository for this project edwardgurney/p4-news-site
+  3. Click the fork button
 
 ### Database
 
@@ -368,7 +383,7 @@ The app was deployed on Heroku in the following steps:
 To clone this repository follow the below steps:
 
 1. Go to the GitHub repository
-2. Click on the Coode drop down button and select if you wish to clone with either HTTPS, SSH or Ghib CLI.
+2. Click on the Code drop down button and select if you wish to clone with either HTTPS, SSH or Ghib CLI.
 3. Click the copy button (clipboard emblem).
 4. Open Git Bash (Mac or Windows)
 5. Choose the working directory

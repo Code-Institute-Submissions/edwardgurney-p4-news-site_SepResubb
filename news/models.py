@@ -27,7 +27,7 @@ class Post(models.Model):
         ordering = ['-created_date']
 
     def __str__(self):
-        return self.title
+        return f"{self.title}"
 
     # def number_of_upvotes(self):
     #     return self.upvotes.count()
@@ -57,10 +57,10 @@ class Comment(models.Model):
         return f"Comment {self.body} by {self.user_name}"
 
     def number_of_upvotes(self):
-        return self.upvotes.count()
+        return self.comment_upvote.count()
 
     def number_of_downvotes(self):
-        return self.downvotes.count()
+        return self.comment_downvote.count()
 
     def inappropriate_posts_count(self):
         return self.inappropriate_post.count()
