@@ -133,143 +133,114 @@ The following were imported from various sources including Django views, shortcu
 
 #### **Navigation Bar**
 
-<details>
-  <summary>On every page (forms base.html) is a fully responsive navigation bar where links vary depending on logged in status. 
-  </summary>
+  On every page (forms base.html) is a fully responsive navigation bar where links vary depending on logged in status. 
   
-<img src="/workspace/p4-news-site/static/images/development_images/site_header.png">
-
-</details>
+  
+<img src="static/images/development_images/site_header.png">
 
 - If the user is not logged in then a "Login" link is displayed, (see dropdown arrow for picture).
 - If the user is logged in then a "logout" link is displayed (see below).
-<img src="/workspace/p4-news-site/static/images/development_images/logout_header.png">
+<img src="static/images/development_images/logout_header.png">
 <br>
 
 #### **Log in page**
 
-<details>
-  <summary>Users can enter their usernames and passwords. When site users aren't logged in and try to leave a comment or like/dislike an article, they are sent to the login page, which also has a link to sign up</summary>
+  Users can enter their usernames and passwords. When site users aren't logged in and try to leave a comment or like/dislike an article, they are sent to the login page, which also has a link to sign up
   
-<img src="/workspace/p4-news-site/static/images/development_images/login_page.png">
+<img src="static/images/development_images/login_page.png">
 
-</details>
 <br>
 
 #### **Sign out page**
 
-<details>
-  <summary>When users are signing out it asks users for confirmation</summary>
+  When users are signing out it asks users for confirmation
   
   
-<img src="/workspace/p4-news-site/static/images/development_images/sign_out.png">
+<img src="static/images/development_images/sign_out.png">
 
-</details>
 <br>
 
 #### **Sign up page**
 
-<details>
-  <summary>When clicking the sign-up page users are sent here.</summary>
-  
-  
-<img src="/workspace/p4-news-site/static/images/development_images/register_page.png">
 
-</details>
+  When clicking the sign-up page users are sent here.
+  
+  
+<img src="static/images/development_images/register_page.png">
+
 <br>
 
 #### **Search Results Page**
 
-<details>
-  <summary>When users search using keywords, the headlines of all articles on the site are searched and any matches returned.</summary>
+  When users search using keywords, the headlines of all articles on the site are searched and any matches returned.
   
-  
-<img src="/workspace/p4-news-site/static/images/development_images/search.png">
+<img src="static/images/development_images/search.png">
 
-</details>
 <br>
 
 #### **Article Details Page**
 
-<details>
-  <summary>Clicking the article headline takes the user through to the article page where they can interact with the content</summary>
+  Clicking the article headline takes the user through to the article page where they can interact with the content
   
   
-<img src="/workspace/p4-news-site/static/images/development_images/article_detail.png">
+<img src="static/images/development_images/article_detail.png">
 
-</details>
 <br>
 
 #### **Up/Down-vote and comments section**
 
-<details>
-  <summary>At the bottom of the article users are able to up and downvote the article. This is then stored in the model so admin can see from admin and also the number of likes is used to formulate the popular stories table on the homepage. Users can also leave their comments in this area of the article detail page</summary>
-  
-<img src="/workspace/p4-news-site/static/images/development_images/up_down_vote_back.png">
 
-</details>
+  At the bottom of the article users are able to up and downvote the article. This is then stored in the model so admin can see from admin and also the number of likes is used to formulate the popular stories table on the homepage. Users can also leave their comments in this area of the article detail page
+  
+<img src="static/images/development_images/up_down_vote_back.png">
+
 <br>
 
 #### **Comments section with button to flag inappropriate posts**
 
-<details>
-  <summary>Users can leave comments and engage with the community, they can also notify site admin of any imappropriate posts by clicking the face icon.</summary>
+  Users can leave comments and engage with the community, they can also notify site admin of any imappropriate posts by clicking the face icon.
   
-<img src="/workspace/p4-news-site/static/images/development_images/user_comments.png">
+<img src="static/images/development_images/user_comments.png">
 
-</details>
-<img src="/workspace/p4-news-site/static/images/development_images/sad_face.png">
+<img src="static/images/development_images/sad_face.png">
 <br>
 
 ### **Top 5 articles section**
 
-<details>
-  <summary>This is where users can see the. most liked articles on the site</summary>
+This is where users can see the. most liked articles on the site
   
-<img src="/workspace/p4-news-site/static/images/development_images/top5.png">
+<img src="static/images/development_images/top5.png">
 
-</details>
 <br>
 
 #### **DJANGO ADMIN AREA**
 - Site admin can access the admin area to edit models if required. Additionally site admin can add articles here that will appear on the site.
 - Admin can see an inappropriate posts counter in the comments sectin of the admin area. This shows where users have clicked an inappropriate post so that site admin can review and remove if required.
 - Site admin can view registered users, site activity and filter posts on comments through various waye, e.g through date posted or by author. 
-<details>
 
-  <summary>Filter in admin panel</summary>
+Filter in admin panel
   
-  
-<img src="/workspace/p4-news-site/static/images/development_images/filter_admin.png">
+<img src="static/images/development_images/filter_admin.png">
 
-</details>
 
-<details>
-  <summary>Inappropriate Post Counter in admin</summary>
+Inappropriate Post Counter in admin
 
-<img src="/workspace/p4-news-site/static/images/development_images/inappropriate.png">
-
-</details>
+<img src="static/images/development_images/inappropriate.png">
 
 <br>
 
 ## **Database Schema**
 - The user admin model from Django was utilised with the following models 
-<details>
 
   
-  <summary>Entity Relationship Diagram - POSTS Model
-  </summary>
-  <img src="/workspace/p4-news-site/static/images/development_images/POSTS.png">
+  Entity Relationship Diagram - POSTS Model
+  
+  <img src="static/images/development_images/POSTS.png">
 
-</details>
-
-<details>
-  <summary>Entity Relationship Diagram - COMMENTS Model
-  </summary>
+  Entity Relationship Diagram - COMMENTS Model
    
-<img src="/workspace/p4-news-site/static/images/development_images/COMMENTS.png">
-</details>
+<img src="static/images/development_images/COMMENTS.png">
+
 <br>
 
 
@@ -287,15 +258,12 @@ The following were imported from various sources including Django views, shortcu
 ### **PEP8 Validation**
 PEP8 online validation was used to check for any errors. All of the code passes with no errors or warning present due to bad code.  Example screen shots of some of the code are below:
 
-<details>
-  <summary>This screen shows the top of the file and the code being accepted on Pep8 for Python code. All python code was tested using this process. The three errors that remain are due to a long variable name and breaking these down into a line underneath would not have solved the problem. Additionally, for example purposes I made the changes elsewhere in the models.py file and moved any lines that were too long to the line below. However, whilst I am aware of the 'line too long' item, it applies to a time when monitors were smaller and a max line limit of 80 was the accepted convention. Nowadays with bigger screens this is no longer the case, and longer lines are still readable. Therefore going forward, I have no issue with my lines being longer becasue I believe it makes it easier to read than breaking it down onto individual lines. Of course, if the line is excessively long then I will break it down, but only if I believe it becomes unreadable.</summary>
-  
-  
-<img src="/workspace/p4-news-site/static/images/development_images/pep82ok.png">
 
-</details>
+  This screen shows the top of the file and the code being accepted on Pep8 for Python code. All python code was tested using this process. The three errors that remain are due to a long variable name and breaking these down into a line underneath would not have solved the problem. Additionally, for example purposes I made the changes elsewhere in the models.py file and moved any lines that were too long to the line below. However, whilst I am aware of the 'line too long' item, it applies to a time when monitors were smaller and a max line limit of 80 was the accepted convention. Nowadays with bigger screens this is no longer the case, and longer lines are still readable. Therefore going forward, I have no issue with my lines being longer becasue I believe it makes it easier to read than breaking it down onto individual lines. Of course, if the line is excessively long then I will break it down, but only if I believe it becomes unreadable.
+  
+<img src="static/images/development_images/pep82ok.png">
+
 <br>
-
 
 ### **WC3 Validation**
 The WC3 validator was used to check for any errors in the HTML code. All code passes with no errors.
@@ -303,11 +271,10 @@ The WC3 validator was used to check for any errors in the HTML code. All code pa
 <br>
 
 ### **CSS Validation**
-<details>
-  <summary>The WC3 CSS validator was used to check for any errors in the CSS code. All code passes with no errors.</summary>
 
-<img src="/workspace/p4-news-site/static/images/development_images/css_pass.png">
-</details>
+  The WC3 CSS validator was used to check for any errors in the CSS code. All code passes with no errors.
+
+<img src="static/images/development_images/css_pass.png">
 
 ## **Manual Testing**
 - The site has been used by friends and family to try and find any errors. There are no known errors in this version that have been found that haven't been fixed during the development process.

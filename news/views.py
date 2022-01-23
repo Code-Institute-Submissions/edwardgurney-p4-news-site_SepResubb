@@ -9,7 +9,6 @@ from django.urls import reverse
 from django.db.models import Count
 
 
-# Create your views here.
 class HomeView(ListView):
     model = Post
     template_name = 'home.html'
@@ -33,7 +32,6 @@ class ArticleDetailView(DetailView):
 @login_required
 def submit_comment(request, slug):
     if request.method == "POST":
-        #form = CommentForm(request.POST)
         user_comment = request.POST.get('body')
         comment_post = get_object_or_404(Post, slug=slug)
         user = request.user
@@ -52,7 +50,7 @@ def upvote(request, slug):
 
 def search(request):
     search_word = request.GET.get('search_word')
-    post_items = Post.objects.filter(title__icontains=search_word)  #| Post.objects.filter(sub_headline__icontains=search_word)
+    post_items = Post.objects.filter(title__icontains=search_word)
     return render(request, 'search_results.html', {'search_list': post_items})
 
 
