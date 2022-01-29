@@ -54,9 +54,8 @@ An Agile methodolgy was used during the development process and this has been do
 - I want to be able to find the articles easily via a search bar so that I can find articles I have commented on previously, add more comments and see if anyone has added to the debate/conversation. 
 - I want only registered users to be able to leave comments to encourage a positive community and motivate me to return.
 
-### *Repeat User Goals*
-
 - I want to be able to continue the conversation by being able to find the articles I have commented on easily.
+
 - I want to be able to flag offensive posts for admin to address so that the community remains a positive place to be. 
 
 ## **Design**
@@ -115,7 +114,7 @@ The following were imported from various sources including Django views, shortcu
 
 ### **Existing Features**
 
-- Below are descriptions of features with screenshots that demonstrate the project outcomes and website layout, click on the drop down arrow to view image examples.
+- Below are descriptions of features with screenshots that demonstrate the project outcomes and website layout.
 
 #### **Homepage**
 
@@ -207,7 +206,7 @@ The following were imported from various sources including Django views, shortcu
 
 ### **Top 5 articles section**
 
-This is where users can see the. most liked articles on the site
+This is where users can see the most liked articles on the site
   
 <img src="static/images/development_images/top5.png">
 
@@ -243,8 +242,6 @@ Inappropriate Post Counter in admin
 
 <br>
 
-
-
 ### **Features to Implement in future Versions**
 - When a user clicks the inappropriate post button for a notifcation to tell them that the site admin will review the post shortly and remove. 
 
@@ -258,7 +255,7 @@ Inappropriate Post Counter in admin
 ### **PEP8 Validation**
 [PEP8 online validation](http://pep8online.com) was used to check for any errors. All of the code passes with no errors or warning present due to bad code.  Example screen shots of some of the code are below:
 
-  This screen shows the top of the file and the code being accepted on Pep8 for Python code. All python code was tested using this process. There are some errorts that remain and these have been left intentionally. Some errors that have the 'line too long' warning were actioned, but for some it is due to a long variable name. However, whilst I am aware of the 'line too long' item, it applies to a time when monitors were smaller and a max line limit of 80 was the accepted convention. Nowadays with bigger screens this is no longer the case, and longer lines are still readable. Therefore going forward, I have no issue with my lines being longer becasue I believe it makes it easier to read than breaking it down onto individual lines. Of course, if the line is excessively long then I will break it down, but only if I believe it becomes unreadable.
+  This screen shows the top of the file and the code being accepted on Pep8 for Python code. All python code was tested using this process. I removed all genuine errors and there were a few  'line too long' warnings. Originally I left some of these in becasue they were long variable names rather than bad code. I was also of the opinion that, whilst I am aware of the 'line too long' item, it applied to a time when monitors were smaller and a max line limit of 80 was the accepted convention. Nowadays with bigger screens this is no longer the case, and longer lines are still readable/accepted. However, after discussion with my mentor I decided to break these lines down so that they fit with convention, even if I don't think it is aboslutely necessary all of the time. 
   
 <img src="static/images/development_images/pep8allright.png">
 
@@ -333,7 +330,7 @@ https://docs.djangoproject.com/en/4.0/topics/db/search/
 
 - Pagination was not working properly, Pagination was set to 6 in my HomeView class, but articles were disappearing off the page once they were past 6 and were not locatable. I googled how to paginate with google and found the following article: 
 https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html
-<br>I used some of the code here as a basis to fix the problem (which you can see is in my code), but had to make changes to suit the site, for example adding in classes and. I also added in some bootstrap code to make it more aesthetically pleasing. 
+<br>I used some of the code here as a basis to fix the problem (which you can see is in my code), but had to make changes to suit the site, for example adding in classes. I also added in some bootstrap code to make it more aesthetically pleasing. 
 
 - The most liked chart wasn’t working. The reason for this I discovered is becasue my model as a many to many wasn’t an integer so it was posting articles that had been liked but not in any coherent order. Django documentation used was: <br>
 https://docs.djangoproject.com/en/4.0/topics/db/aggregation/<br>
@@ -400,9 +397,9 @@ To clone this repository follow the below steps:
 
 - Images for the site were taken from a free images site [pexels](https://www.pexels.com/search/solar/) and were provided from a further site uploaded to pexels called [pixabay](https://www.pexels.com/@pixabay)
 
-- Content for the site was written by the developer as part of his role in the renewable energy industry [diagrams.net](https://www.diagrams.net/)
+- Content for the site was written by the developer as part of his role in the renewable energy industry.
 
-- Some additional content was added to the site for demonstration of site functionality only and all content was taken from [site]()
+- Some additional content was added to the site for one of the articles (via a link) for demonstration of site functionality only and with the permission of Dr Stephen Finnegan who the site designer has worked with in the past. This has also been accredited on the site itself. [site](https://www.zcri.co.uk/)
 
 ## **Acknowledgements**
 
