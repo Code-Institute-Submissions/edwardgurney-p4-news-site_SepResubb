@@ -22,5 +22,3 @@ class CommentAdmin(admin.ModelAdmin):
                     'inappropriate_posts_count')
     search_fields = ('user_name', 'created_on', 'email')
 
-
-# Register your models here.
