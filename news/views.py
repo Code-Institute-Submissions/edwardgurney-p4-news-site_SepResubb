@@ -50,6 +50,14 @@ def submit_comment(request, slug):
         return HttpResponseRedirect(
             reverse('article-detail', args=(comment_post.slug,)))
 
+@login_required
+def delete_comment(request, pk):
+    comment=get_object_or_404(Comment, pk=pk)
+    comment_post = comment.post
+    if comment.user_name == request.user.username:
+        comment.delete()
+    return HttpResponseRedirect(
+        reverse('article-detail', args=(comment_post.slug,)))
 
 @login_required
 def upvote(request, slug):

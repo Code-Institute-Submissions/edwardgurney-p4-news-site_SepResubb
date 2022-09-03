@@ -50,6 +50,13 @@
     {% for comment in post.comments.all %}
     <dl>
         <dt>{{ comment.user_name }} | <small>{{ comment.created_on }}</small>
+            {% if comment.user_name == request.user.username %}
+            <form action="{% url 'delete-comment' comment.pk %}" method="POST">
+                {% csrf_token %}
+                <button class="btn btn-primary btn-sm fa fa-trash btn btn-danger" type="submit"
+                    name="delete_comment"></button>
+            </form>
+            {% endif %}
         </dt>
         <dd>{{ comment.body }}
             <form action="{% url 'inappropriate_comment' comment.pk %}" method="POST">
